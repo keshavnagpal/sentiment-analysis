@@ -99,7 +99,7 @@ class analyzer:
 #     }
 # }
 #wsgiapp = cherrypy.Application(analyzer(), '/', config=myconf)
-wsgiapp = cherrypy.Application(analyzer())
+wsgi_app = cherrypy.Application(analyzer())
 #To run locally
 #cherrypy.quickstart(analyzer())
 
