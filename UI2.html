@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<title>Status Assessment</title>
+
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+	<!--  Scripts-->
+	<script	src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').material_select();
+			$("#status1").val($("#var1").html()).trigger("change");
+			$("#status2").val($("#var2").html()).trigger("change");
+			$("#status3").val($("#var3").html()).trigger("change");
+			document.getElementById('var1').style.display = 'none';
+			document.getElementById('var2').style.display = 'none';
+			document.getElementById('var3').style.display = 'none';
+
+		});
+
+	</script>
+</head>
+<body>
+	<span id="var1">%s</span>
+	<span id="var2">%s</span>
+	<span id="var3">%s</span>
+
+	<nav class="teal lighten-1" role="navigation">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="#" class="brand-logo white-text">Status Assessment</a>
+			<ul class="right hide-on-med-and-down">
+			</ul>
+
+			<ul id="nav-mobile" class="side-nav grey darken-3">
+			</ul>
+			<a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+		</div>
+	</nav>
+
+	<div class="container section">
+		<div class="row">
+			<br>
+			<form class="col s12" action = "DoAnalyze" method = post id="form" onsubmit="">
+				<!-- comment-1 -->
+				<div class="row">
+					<div class="input-field col s2">
+						<select id="status1" name="status1" class="browser-default">
+							<option value="select_stat" disabled selected>Status</option>						
+							<option value="Green">Green</option>
+							<option value="Amber">Amber</option>
+							<option value="Red">Red</option>
+						</select>
+					</div>
+					<div class="input-field col s8">
+						<input value = "%s", name = "comment1" id="comment1" type="text" class="validate">
+						<label for="comment1">Enter Comment</label>
+					</div>
+					<a class="btn-floating btn-large waves-effect waves-light %s"><i class="material-icons">%s</i></a>
+				</div>
+				<!-- comment-2 -->
+				<br>
+				<div class="row">
+					<div class="input-field col s2">
+						<select id="status2", name="status2", class="browser-default">
+							<option value="select_stat" disabled selected>Status</option>
+							<option value="Green">Green</option>
+							<option value="Amber">Amber</option>
+							<option value="Red">Red</option>
+						</select>
+					</div>
+					<div class="input-field col s8">
+						<input value="%s", name = "comment2" id="comment2" type="text" class="validate">
+						<label for="comment2">Enter Comment</label>
+					</div>
+					<a class="btn-floating btn-large waves-effect waves-light %s"><i class="material-icons">%s</i></a>
+				</div>
+				<!-- comment-3 -->
+				<br>
+				<div class="row">
+					<div class="input-field col s2">
+						<select id = "status3", name="status3", class="browser-default">
+							<option value="select_stat" disabled selected>Status</option>
+							<option value="Green">Green</option>
+							<option value="Amber">Amber</option>
+							<option value="Red">Red</option>
+						</select>
+					</div>
+					<div class="input-field col s8">
+						<input value="%s", name = "comment3" id="comment3" type="text" class="validate">
+						<label for="comment3">Enter Comment</label>
+					</div>
+					<a class="btn-floating btn-large waves-effect waves-light %s"><i class="material-icons">%s</i></a>
+				</div>
+				<!-- submit-->
+				<div class="center-align">
+					<button class="btn waves-effect waves-light" type="submit">Analyze</button>
+				</div>
+			</form>
+		</div>
+		
+	</div>
+</body>
+</html>
