@@ -92,17 +92,12 @@ class analyzer:
 		return webform_result
 	DoAnalyze.exposed=True
 
-# Uncomment after uploading to the server
-# myconf = {
-#     'global': {
-#         'server.socket_host': '0.0.0.0',
-#         'server.socket_port': int(os.environ.get('PORT', 5000)),
-#     }
-# }
-#wsgiapp = cherrypy.Application(analyzer(), '/', config=myconf)
-wsgi_app = cherrypy.Application(analyzer(), '/')
 #To run locally
 #cherrypy.quickstart(analyzer())
+
+#To run on a server
+wsgi_app = cherrypy.Application(analyzer(), '/')
+
 if __name__ == '__main__':
 	from wsgiref.simple_server import make_server
 	httpd = make_server('', 6600, wsgi_app)
