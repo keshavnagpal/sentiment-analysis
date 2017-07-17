@@ -1,6 +1,7 @@
 import cherrypy
 from vaderSentiment import SentimentIntensityAnalyzer
 import os
+import sys
 def sent(comment,status):
 	analyzer = SentimentIntensityAnalyzer()
 	if(comment==''):
@@ -99,9 +100,10 @@ class analyzer:
 #     }
 # }
 #wsgiapp = cherrypy.Application(analyzer(), '/', config=myconf)
-wsgi_app = cherrypy.Application(analyzer())
+wsgi_app = cherrypy.Application(analyzer(), '/')
 #To run locally
 #cherrypy.quickstart(analyzer())
-
-
-
+if __name__ == '__main__':
+	from wsgiref.simple_server import make_server
+	httpd = make_server('', 6600, wsgi_app)
+	httpd.serve_forever()
