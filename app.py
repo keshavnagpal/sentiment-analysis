@@ -34,6 +34,7 @@ def sent(comment,status):
 		return 'close'
 
 class analyzer:
+	@cherrypy.expose
 	def index(self):
 		def_status="select_stat"
 		def_color="grey lighten-1"
@@ -42,8 +43,8 @@ class analyzer:
 		fx=open("index.html","r")
 		webform = fx.read()%(def_status,def_status,def_status,def_comment,def_color,def_flag,def_comment,def_color,def_flag,def_comment,def_color,def_flag)
 		return webform
-	index.exposed=True
 
+	@cherrypy.expose
 	def DoAnalyze(self,comment1=None,comment2=None,comment3=None,status1=None,status2=None,status3=None):
 		comment1=str(comment1)
 		comment2=str(comment2)
@@ -90,7 +91,6 @@ class analyzer:
 
 		webform_result=fx_result.read()%(status1,status2,status3,comment1,color1,flag1,comment2,color2,flag2,comment3,color3,flag3)
 		return webform_result
-	DoAnalyze.exposed=True
 
 #To run locally
 #cherrypy.quickstart(analyzer())
