@@ -39,7 +39,7 @@ class analyzer:
 		def_color="grey lighten-1"
 		def_comment=""
 		def_flag=""
-		fx=open("UI2.html","r")
+		fx=open("index.html","r")
 		webform = fx.read()%(def_status,def_status,def_status,def_comment,def_color,def_flag,def_comment,def_color,def_flag,def_comment,def_color,def_flag)
 		return webform
 	index.exposed=True
@@ -66,7 +66,7 @@ class analyzer:
 
 
 
-		fx_result = open("UI2.html","r")
+		fx_result = open("index.html","r")
 		if(flag1=='close'):
 			color1='red'
 		elif(flag1=='done'):
