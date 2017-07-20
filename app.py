@@ -32,7 +32,7 @@ def sent(comment,status):
 	else:
 		return 'close'
 
-class analyzer:
+class analyzer(object):
 	@cherrypy.expose
 	@cherrypy.tools.response_headers(headers=[('Content-Type', 'text/html')])
 	def index(self):
