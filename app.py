@@ -35,6 +35,7 @@ def sent(comment,status):
 
 class analyzer:
 	@cherrypy.expose
+	@cherrypy.tools.response_headers(headers=[('Content-Type', 'text/html')])
 	def index(self):
 		def_status="select_stat"
 		def_color="grey lighten-1"
@@ -45,6 +46,7 @@ class analyzer:
 		return webform
 
 	@cherrypy.expose
+	@cherrypy.tools.response_headers(headers=[('Content-Type', 'text/html')])
 	def DoAnalyze(self,comment1=None,comment2=None,comment3=None,status1=None,status2=None,status3=None):
 		comment1=str(comment1)
 		comment2=str(comment2)
