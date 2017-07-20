@@ -1,6 +1,5 @@
 import cherrypy
 from vaderSentiment import SentimentIntensityAnalyzer
-import os
 import sys
 def sent(comment,status):
 	analyzer = SentimentIntensityAnalyzer()
