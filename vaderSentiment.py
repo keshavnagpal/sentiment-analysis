@@ -11,7 +11,7 @@ Sentiment Analysis of Social Media Text. Eighth International Conference on
 Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
 """
 
-import math, re, string, requests, json
+import math, re, string, json
 from itertools import product
 from inspect import getsourcefile
 from os.path import abspath, join, dirname
